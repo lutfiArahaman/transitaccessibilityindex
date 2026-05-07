@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAHP-ANN-PROMETHEE Transit Accessibility Index</title>
+
+    <!-- ArcGIS Maps SDK 5.0 from CDN -->
+    <script type="module" src="https://js.arcgis.com/5.0/"></script>
+
+    <!-- Tiny Assistant from CDN (no npm/Node.js required) -->
+    <script
+      type="module"
+      src="https://ceddc.github.io/tiny-assistant/tiny-assistant.js"></script>
+
+    <style>
+      html,
+      body {
+        block-size: 100%;
+        inline-size: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: #f5f1e8;
+      }
+
+      arcgis-map {
+        block-size: 100dvh;
+        display: block;
+        inline-size: 100%;
+      }
+
+      tiny-arcgis-assistant {
+        display: contents;
+      }
+    </style>
+  </head>
+  <body>
+    <arcgis-map id="fahp-map" item-id="0bb347a8bf554f4fac1b527f0c0727a7">
+      <arcgis-zoom slot="top-left"></arcgis-zoom>
+      <arcgis-expand slot="top-left">
+        <arcgis-legend></arcgis-legend>
+      </arcgis-expand>
+      <arcgis-expand slot="top-left">
+        <arcgis-layer-list></arcgis-layer-list>
+      </arcgis-expand>
+    </arcgis-map>
+
+    <tiny-arcgis-assistant
+      reference-element="#fahp-map"
+      sprites='{"globby":"https://ceddc.github.io/tiny-assistant/assets/globby-spritesheet.webp","globby-may-4th":"https://ceddc.github.io/tiny-assistant/assets/globbymay4-spritesheet.webp","clippy":"https://ceddc.github.io/tiny-assistant/assets/clippy-spritesheet.webp","boba":"https://ceddc.github.io/tiny-assistant/assets/boba-spritesheet.webp"}'
+      heading="FAHP-ANN-PROMETHEE Transit Accessibility"
+      description="Transit accessibility index analysis using Fuzzy AHP, ANN, and PROMETHEE multi-criteria methods."
+      suggested-prompts='["What layers are available in this map?", "Which zones have the highest transit accessibility index?", "Show me areas with the lowest accessibility scores.", "What is the spatial distribution of the transit accessibility index?", "Navigate to the study area."]'>
+      <arcgis-assistant-navigation-agent></arcgis-assistant-navigation-agent>
+      <arcgis-assistant-data-exploration-agent></arcgis-assistant-data-exploration-agent>
+      <arcgis-assistant-help-agent></arcgis-assistant-help-agent>
+    </tiny-arcgis-assistant>
+  </body>
+</html>
